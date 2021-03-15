@@ -16,7 +16,7 @@
         <span class="card-title center">Transferencias / Terceros</span>
           <div class="row">
             <form class="col s12" @submit.prevent="submit">
-              <div class="row">
+              <div class="row ">
                 <div class="col s4"> 
                  
 
@@ -40,13 +40,13 @@
                      <span v-if="submitStatus && !$v.form.Apellidos.required.$error"  :class="{ 'invalid helper-text': $v.form.Apellidos.$error }"  data-error="Campo invalido"></span>
                   </div>
                <div class="row">
-          <div class="input-field col s6 ">
+          <div class="input-field col s7 ">
           <input type="text" :class="{ 'invalid': $v.form.Direccion.$error }" v-model.trim="$v.form.Direccion.$model"  />
           <label for="last_name">Direccion</label>
           <span v-if="submitStatus && !$v.form.Direccion.required.$error"  :class="{ 'invalid helper-text': $v.form.Direccion.$error }"  data-error="Campo invalido"></span>
                   
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s5">
           <input type="text"  :class="{ 'invalid': $v.form.Postal.$error }" v-model.trim="$v.form.Postal.$model"  />
           <label for="last_name">Codigo Postal</label>
            <span v-if="submitStatus && !$v.form.Postal.required.$error"  :class="{ 'invalid helper-text': $v.form.Postal.$error }"  data-error="Campo invalido"></span>
@@ -121,22 +121,18 @@
           <div class="input-field ">
            <input  type="text"  :class="{ 'invalid': $v.form.Nacionalidad.$error }" v-model.trim="$v.form.Nacionalidad.$model"   />
           <label for="last_name">Nacionalidad</label>
-           <span v-if="submitStatus && !$v.form.Nacionalidad.required.$error"  :class="{ 'invalid helper-text': $v.form.Nacionalidad.$error }"  data-error="Campo invalido"></span>
            
         </div>
        
           <div class="input-field ">
-          <input type="text" class="datepicker" :class="{ 'invalid': $v.form.FechaE.$error }" v-model.trim="$v.form.FechaE.$model"    />
+          <input type="text"   @input="fecha"/>
           <label for="last_name">Fecha de emision</label>
-          <span v-if="submitStatus && !$v.form.FechaE.required.$error"  :class="{ 'invalid helper-text': $v.form.FechaE.$error }"  data-error="Campo invalido"></span>
-           
           </div>
       
         <div class="input-field ">
-          <input type="text" class="datepicker" :class="{ 'invalid': $v.form.FechaC.$error }" v-model.trim="$v.form.FechaC.$model"    />
+          <input type="text"   />
           <label for="last_name">Fecha de coducidad</label>
-           <span v-if="submitStatus && !$v.form.FechaC.required.$error"  :class="{ 'invalid helper-text': $v.form.FechaC.$error }"  data-error="Campo invalido"></span>
-        </div>
+            </div>
         
  
       
@@ -204,13 +200,13 @@
                      <span v-if="submitStatus && !$v.form.Apellidos.required.$error"  :class="{ 'invalid helper-text': $v.form.Apellidos.$error }"  data-error="Campo invalido"></span>
                   </div>
                <div class="row">
-          <div class="input-field col s6 ">
+          <div class="input-field col s7 ">
           <input type="text" :class="{ 'invalid': $v.form.Direccion.$error }" v-model.trim="$v.form.Direccion.$model"  />
           <label for="last_name">Direccion</label>
           <span v-if="submitStatus && !$v.form.Direccion.required.$error"  :class="{ 'invalid helper-text': $v.form.Direccion.$error }"  data-error="Campo invalido"></span>
                   
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s5">
           <input type="text"  :class="{ 'invalid': $v.form.Postal.$error }" v-model.trim="$v.form.Postal.$model"  />
           <label for="last_name">Codigo Postal</label>
            <span v-if="submitStatus && !$v.form.Postal.required.$error"  :class="{ 'invalid helper-text': $v.form.Postal.$error }"  data-error="Campo invalido"></span>
@@ -277,15 +273,13 @@
         <div class="input-field ">
           <input  type="text" :class="{ 'invalid': $v.form.Documento.$error }"   />
           <label for="last_name">N° de documentos</label>
-          <span v-if="submitStatus && !$v.form.value.required.$error"  :class="{ 'invalid helper-text': $v.form.value.$error }"  data-error="Campo invalido"></span>
+          <span v-if="submitStatus && !$v.form.Documento.required.$error"  :class="{ 'invalid helper-text': $v.form.Documento.$error }"  data-error="Campo invalido"></span>
         </div> 
      
      
           <div class="input-field ">
-           <input  type="text"  :class="{ 'invalid': $v.form.value.$error }"  />
+           <input  type="text"   />
           <label for="last_name">Nacionalidad</label>
-           <span v-if="submitStatus && !$v.form.value.required.$error"  :class="{ 'invalid helper-text': $v.form.value.$error }"  data-error="Campo invalido"></span>
-           
         </div>
 
 
@@ -334,7 +328,7 @@
           <label for="last_name">Codigo N°</label>
         </div>
          <div class="input-field ">
-         <input type="text"  v-model.trim="$v.form.Fecha.$model"  @input="fecha">
+         <input type="text"   @input="fecha">
           <label for="last_name">Fecha</label>
         </div>
       
@@ -377,55 +371,6 @@
          
          
 
-
-      
-     
-<!-- 
-<div class="rowcontainer">
-  <div class="row">
-    <div class="col s4 teal">
-      cuadro
-     
-    </div>
-     <div class="col s4 blue">
-       cuadro
-     
-    </div>
-     <div class="col s4 red">
-       cuadro
-     
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s4 teal">
-      cuadro
-     
-    </div>
-     <div class="col s4 blue">
-       cuadro
-     
-    </div>
-     <div class="col s4 red">
-       cuadro
-     
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s4 teal">
-      cuadro
-     
-    </div>
-     <div class="col s4 blue">
-       cuadro
-     
-    </div>
-     <div class="col s4 red">
-       cuadro
-     
-    </div>
-  </div>
-</div>
-       -->
 
 
  
@@ -503,14 +448,32 @@ mounted () {
 
 
 
-        value:null,
+        
         DirecionDeBanco:"",
         TipoDeCuenta:"",
         NuAgencia:"",
         CardFidelid:"",
         CartCredit:"",
         Envion:"",
-        Fecha:""
+        Fecha:"",
+        beneficiario:{
+          
+          Nombres:"",
+        Apellidos:"",
+        Direccion:"",
+        Postal:"",
+        Ciudad:"",
+        Pais:"",
+        Movil:"",
+        MovilAux:"",
+        Facebook:"",
+        Mail:"",
+        Whatsapp:"",
+        Telegram:"",
+        TDocumento:"",
+        Documento:"",
+        Nacionalidad:"",
+        }
        
       },
       date:null,
@@ -521,15 +484,10 @@ mounted () {
   }, 
    validations: {
      form:{
-       value:{
-           required,
-      alpha,
-      minLength: minLength(3)
-
-       },
+       
        Expediteur: {
       required,
-      alpha,
+      alphaNum,
       minLength: minLength(3)
      
     },
@@ -572,7 +530,6 @@ mounted () {
     },
         Movil:{
       required,
-      alphaNum,
      
       minLength: minLength(6)
      
@@ -626,20 +583,7 @@ mounted () {
       minLength: minLength(3)
      
     },
-        FechaE:{
-      required,
-      
-      
-      
-     
-    },
-        FechaC:{
-      required,
-   
-      
-      
-     
-    },
+       
         Ocupacion:{
       required,
       minLength: minLength(3)
@@ -655,9 +599,7 @@ mounted () {
     DirecionDeBanco:{
        required,
     },
-     Fecha:{
-       required,
-    },
+     
      NuAgencia:{
        required,
     }
@@ -707,40 +649,12 @@ mounted () {
 </script>
 
 <style>
-/* input[type=text]:not(.browser-default){
-      height: 4rem !important;
-      margin: -2px 0 -5px 0 !important;
-}
 .input-field {
     position: relative;
-     margin-top: 1rem; 
-     margin-bottom: 0rem  !important;
-} */
-
-    /* label color */
-  
-   /* label focus color */
-   .errorvuelabel input[type=text]:focus + label {
-     color: red  !important;
-   }
-   /* label underline focus color */
-    .errorvue input[type=text]:focus {
-     border-bottom: 1px solid red  !important;
-     box-shadow: 0 1px 0 0 red  !important;
-   } 
-   /* valid color */
-   /* .input-field input[type=text].valid {
-     border-bottom: 1px solid red  !important;
-     box-shadow: 0 1px 0 0 red  !important;
-   } */
-   /* invalid color */
-   /* .input-field input[type=text].invalid {
-     border-bottom: 1px solid red  !important;
-     box-shadow: 0 1px 0 0 red  !important;
-   } */
-   /* icon prefix focus color */
-   /* .input-field .prefix.active {
-     color: red ;
-   } */
-        
+    
+    margin-bottom: 0rem !important;
+}
+.row{
+  margin-bottom: auto  !important;
+}
 </style>
